@@ -1,4 +1,4 @@
-<a href="https://codeclimate.com/github/rupa4ok/cursor/maintainability"><img src="https://api.codeclimate.com/v1/badges/01d219f20788114d2b6e/maintainability" /></a>  [![Build Status](https://travis-ci.org/rupa4ok/cursor.svg?branch=master)](https://travis-ci.org/rupa4ok/cursor)  [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/rupa4ok/cursor/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/rupa4ok/cursor/)
+<a href="https://codeclimate.com/github/rupa4ok/refresh_tabel/maintainability"><img src="https://api.codeclimate.com/v1/badges/01d219f20788114d2b6e/maintainability" /></a>  [![Build Status](https://travis-ci.org/rupa4ok/refresh_tabel.svg?branch=master)](https://travis-ci.org/rupa4ok/refresh_tabel)  [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/rupa4ok/refresh_tabel/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/rupa4ok/refresh_tabel/)
 
 **DEMO:** **[https://tabel-refresh.herokuapp.com/](https://tabel-refresh.herokuapp.com/)**
 
