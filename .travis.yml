@@ -1,0 +1,41 @@
+language: php
+php:
+- '7.2'
+
+services:
+- postgresql
+
+before_script:
+- curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
+- chmod +x ./cc-test-reporter
+- ./cc-test-reporter before-build
+- travis_retry composer self-update
+- travis_retry composer install --no-interaction --prefer-source --dev
+
+env:
+  global:
+  - CC_TEST_REPORTER_ID=fc4cff3f449dff3ea84f2f92de0d239a9cfcd7475e49eca98f7e0d2b03aea21d
+  - CODECOV_TOKEN="977e1925-527b-41c3-9a32-a8b2b5767955"
+  - DB_CONNECTION=pgsql
+  - DB_DATABASE=travis_ci_test
+  - DB_USERNAME=postgres
+  - GIT_COMMITTED_AT=$(if [ "$TRAVIS_PULL_REQUEST" == "false" ]; then git log -1 --pretty=format:%ct; else git log -1 --skip 1 --pretty=format:%ct; fi)
+
+before_install:
+- sh -c "if [ '$DB_CONNECTION' = 'pgsql' ]; then psql -c 'DROP DATABASE IF EXISTS travis_ci_test;' -U postgres; fi"
+- sh -c "if [ '$DB_CONNECTION' = 'pgsql' ]; then psql -c 'CREATE DATABASE travis_ci_test;' -U postgres; fi"
+
+install:
+- composer self-update
+- make install
+- sudo apt-get install php5-xdebug
+
+after_script:
+- vendor/bin/test-reporter
+
+script:
+- make test
+
+after_success:
+# Submit coverage report to https://codecov.io
+- bash <(curl -s https://codecov.io/bash) -t "977e1925-527b-41c3-9a32-a8b2b5767955"
