@@ -11,9 +11,8 @@ namespace App\Models;
 use App\Components\Validate;
 use App\Components\Requests;
 use App\Components\UserInfo;
-use App\controllers\BaseController;
 
-class Users extends BaseController
+class Users extends BaseModel
 {
     /**
      * @var Requests
@@ -21,6 +20,8 @@ class Users extends BaseController
     private $userPostInfo;
     private $userXmlInfo;
     private $validate;
+    protected $table = 'users';
+    protected $fillable = ['username','email','password'];
     
     public function __construct()
     {
@@ -57,5 +58,9 @@ class Users extends BaseController
             $reg = $this->validate->checkValid();
         }
         return $reg;
+    }
+    
+    public function create_user(){
+        return Users::table('users')->get();
     }
 }
