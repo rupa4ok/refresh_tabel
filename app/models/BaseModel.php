@@ -26,6 +26,11 @@ class BaseModel extends Model
      */
     protected $sessionStorage;
     
+    /**
+     * @var Capsule
+     */
+    protected $capsule;
+    
     protected $helpers;
     protected $key;
     
@@ -40,8 +45,7 @@ class BaseModel extends Model
     
     private function connect()
     {
-        $capsule = new Capsule;
-        $capsule->addConnection([
+        $this->capsule->addConnection([
             'driver' => DBDRIVER,
             'host' => DBHOST,
             'database' => DBNAME,
@@ -51,7 +55,7 @@ class BaseModel extends Model
             'collation' => 'utf8_unicode_ci',
             'prefix' => '',
         ]);
-        $capsule->setAsGlobal();
-        $capsule->bootEloquent();
+        $this->capsule->setAsGlobal();
+        $this->capsule->bootEloquent();
     }
 }

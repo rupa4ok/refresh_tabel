@@ -43,5 +43,4 @@ class DbStorage implements StorageInterface
     {
         // TODO: Implement save() method.
     }
-
 }
