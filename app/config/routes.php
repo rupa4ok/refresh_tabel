@@ -9,5 +9,6 @@
 return array(
     'reg' => 'reg/index',
     'login' => 'auth/index',
+    'objectlist' => 'objectlist/index',
     '/' => 'index/main'
 );

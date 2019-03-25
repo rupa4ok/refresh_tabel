@@ -6,7 +6,7 @@
  * Time: 16.00
  */
 
-namespace App\controllers;
+namespace App\Controllers;
 
 use App\components\Helpers;
 use App\Components\Requests;

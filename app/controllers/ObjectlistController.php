@@ -2,8 +2,8 @@
 /**
  * Created by PhpStorm.
  * User: rupak
- * Date: 14.03.2019
- * Time: 5:02
+ * Date: 24.03.2019
+ * Time: 17:26
  */
 
 namespace App\Controllers;
@@ -12,7 +12,7 @@ use App\components\Helpers;
 use App\Components\Requests;
 use App\Components\Auth;
 
-class IndexController extends BaseController
+class ObjectlistController extends BaseController
 {
     /**
      * @var Auth
@@ -29,10 +29,10 @@ class IndexController extends BaseController
         parent::__construct();
     }
     
-    public function actionMain()
+    public function actionIndex()
     {
         $this->auth->login($this->request->getPost(), $this->request->getPost());
-    
-        return Helpers::render('index', ['login' => '']);
+        
+        return Helpers::render('objectlist', ['login' => '']);
     }
 }
