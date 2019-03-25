@@ -25,7 +25,6 @@ class ObjectController extends BaseController
     
     public function __construct()
     {
-        $this->auth = new Auth();
         parent::__construct();
     }
     

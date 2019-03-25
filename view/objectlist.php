@@ -19,14 +19,21 @@
 </head>
 <body>
 
-<div class="limiter">
+<div class="limiter inner">
     <div class="container-login100" style="background-image: url('/template/images/bg-01.jpg');">
         <div class="wrap-login100 p-l-55 p-r-55 p-t-65 p-b-54">
             123
         </div>
+        <div class="wrap-login100 p-l-55 p-r-55 p-t-65 p-b-54">
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+        </div>
     </div>
 </div>
-
 
 <div id="dropDownSelect1"></div>
 

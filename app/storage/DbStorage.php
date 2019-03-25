@@ -24,7 +24,7 @@ class DbStorage implements StorageInterface
         $this->username = $options['username'];
         $this->password = $options['password'];
         try {
-            $this->pdo = new PDO("mysql:host=127.0.0.1; db_name=$this->db_name; charset=utf8", "$this->username", "$this->password");
+            $this->pdo = new PDO("mysql:host=DBHOST; db_name=DBNAME; charset=utf8", "DBUSER", "DBPASS");
             $this->pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         }
         catch (PDOException $e) {

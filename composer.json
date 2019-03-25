@@ -1,7 +1,9 @@
 {
     "require": {
         "php": "^7.2",
-        "phpunit/php-code-coverage": "^7.0"
+        "phpunit/php-code-coverage": "^7.0",
+        "illuminate/events": "^5.8",
+        "illuminate/database": "^5.8"
     },
     "autoload": {
         "psr-4": {

@@ -31,7 +31,7 @@ class IndexController extends BaseController
     
     public function actionMain()
     {
-        $this->auth->login($this->request->getPost(), $this->request->getPost());
+        $this->auth->login();
     
         return Helpers::render('index', ['login' => '']);
     }

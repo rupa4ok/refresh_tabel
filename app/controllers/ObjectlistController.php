@@ -31,8 +31,6 @@ class ObjectlistController extends BaseController
     
     public function actionIndex()
     {
-        $this->auth->login($this->request->getPost(), $this->request->getPost());
-        
         return Helpers::render('objectlist', ['login' => '']);
     }
 }

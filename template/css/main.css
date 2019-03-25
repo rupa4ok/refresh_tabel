@@ -475,4 +475,8 @@ iframe {
     padding-left: 15px;
     padding-right: 15px;
   }
-} 
+}
+
+.inner .wrap-login100 {
+  width: 100%;
+}

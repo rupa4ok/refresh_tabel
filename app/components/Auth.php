@@ -8,9 +8,10 @@
 
 namespace App\Components;
 
+use App\Controllers\BaseController;
 use App\Storage\StorageInterface;
 
-class Auth
+class Auth extends BaseController
 {
     /**
      * @var UserInfo[]
@@ -22,12 +23,20 @@ class Auth
     protected $storage;
     protected $xmlBd;
     
+    public function __construct()
+    {
+        parent::__construct();
+    }
+    
     /**
      * @param $storage
      * @return mixed
      */
-    public function login($storage)
+    public function login()
     {
-        return $this->storage = $storage;
+        $loginData = $this->request->getPost();
+        print_r($loginData);
+        $this->sessionStorage->save($loginData);
+        print_r($this->sessionStorage->load());
     }
 }

@@ -25,9 +25,10 @@ if ($_SERVER['SERVER_NAME'] === "tabel-refresh.herokuapp.com") {
     $dbname = substr($url["path"], 1);
 } else {
     $options = [
-       'host' => '127.0.0.1',
-        'db_name' => 's17623',
-        'username' => 's17623',
-        'password' => 'MgevqH8dZiut'
+        defined("DBDRIVER")or define('DBDRIVER','mysql'),
+        defined("DBHOST")or define('DBHOST','127.0.0.1'),
+        defined("DBNAME")or define('DBNAME','s17623'),
+        defined("DBUSER")or define('DBUSER','s17623'),
+        defined("DBPASS")or define('DBPASS','MgevqH8dZiut')
     ];
 }
