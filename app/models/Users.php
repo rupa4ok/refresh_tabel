@@ -11,6 +11,7 @@ namespace App\Models;
 use App\Components\Validate;
 use App\Components\Requests;
 use App\Components\UserInfo;
+use Illuminate\Database\Capsule\Manager as DB;
 
 class Users extends BaseModel
 {
@@ -18,7 +19,6 @@ class Users extends BaseModel
      * @var Requests
      */
     private $userPostInfo;
-    private $userXmlInfo;
     private $validate;
     protected $table = 'users';
     protected $fillable = ['username','email','password'];
@@ -27,7 +27,6 @@ class Users extends BaseModel
     {
         parent::__construct();
         $this->userPostInfo = new UserInfo($this->request->getPost());
-        $this->userXmlInfo = new UserInfo($this->xmlStorage->load());
         $this->validate = new Validate();
     }
     
@@ -61,6 +60,6 @@ class Users extends BaseModel
     }
     
     public function create_user(){
-        return Users::table('users')->get();
+        return DB::table('users')->get();
     }
 }

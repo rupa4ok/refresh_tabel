@@ -6,16 +6,40 @@
  * Time: 8:16
  */
 
-namespace App\models;
+namespace App\Models;
 
+use App\components\Helpers;
+use App\Components\Requests;
+use App\storage\SessionStorage;
 use \Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Capsule\Manager as Capsule;
 
-abstract class BaseModel extends Model
+class BaseModel extends Model
 {
+    /**
+     * @var Requests
+     */
+    protected $request;
+    
+    /**
+     * @var SessionStorage
+     */
+    protected $sessionStorage;
+    
+    protected $helpers;
+    protected $key;
+    
     public function __construct(array $attributes = [])
     {
         parent::__construct($attributes);
+        $this->helpers = new Helpers();
+        $this->request = new Requests();
+        $this->sessionStorage = new SessionStorage($this->key);
+        $this->connect();
+    }
+    
+    private function connect()
+    {
         $capsule = new Capsule;
         $capsule->addConnection([
             'driver' => DBDRIVER,
@@ -27,7 +51,7 @@ abstract class BaseModel extends Model
             'collation' => 'utf8_unicode_ci',
             'prefix' => '',
         ]);
-        // Setup the Eloquent ORM…
+        $capsule->setAsGlobal();
         $capsule->bootEloquent();
     }
 }
