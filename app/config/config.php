@@ -16,18 +16,18 @@ ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
+$options = [
+    defined ("DBDRIVER") || define ('DBDRIVER','mysql'),
+    defined ("DBHOST") || define ('DBHOST','127.0.0.1'),
+    defined ("DBNAME") || define ('DBNAME','s17623'),
+    defined ("DBUSER") || define ('DBUSER','s17623'),
+    defined ("DBPASS") || define ('DBPASS','MgevqH8dZiut')
+];
+
 if ($_SERVER['SERVER_NAME'] === "tabel-refresh.herokuapp.com") {
     $url = parse_url(getenv("CLEARDB_DATABASE_URL"));
     $host = $url["host"];
     $username = $url["user"];
     $password = $url["pass"];
     $dbname = substr($url["path"], 1);
-} else {
-    $options = [
-        defined ("DBDRIVER") || define ('DBDRIVER','mysql'),
-        defined ("DBHOST") || define ('DBHOST','127.0.0.1'),
-        defined ("DBNAME") || define ('DBNAME','s17623'),
-        defined ("DBUSER") || define ('DBUSER','s17623'),
-        defined ("DBPASS") || define ('DBPASS','MgevqH8dZiut')
-    ];
 }
