@@ -19,7 +19,7 @@ class Requests
         $this->get = $_GET;
     }
     
-    public function getPost(): array
+    public function getPost()
     {
         return $this->post ?? [];
     }

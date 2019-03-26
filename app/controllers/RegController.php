@@ -25,7 +25,7 @@ class RegController extends BaseController
     {
         $errors = '';
         if ($this->request->requestMethod('POST')) {
-            $errors = $this->users->name;
+            $errors = '';
         }
     
         return Helpers::render('reg', ['errors' => $errors]);

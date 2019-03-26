@@ -13,7 +13,7 @@ use App\controllers\BaseController;
 class Validate extends BaseController
 {
     /**
-     * @var Requests
+     * @var UserInfo
      */
     private $userPostInfo;
     
