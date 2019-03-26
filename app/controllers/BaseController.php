@@ -48,7 +48,5 @@ abstract class BaseController
         $this->request = new Requests();
         $this->sessionStorage = new SessionStorage($this->key);
         $this->cookiesStorage = new CookiesStorage();
-//        $this->file = file_get_contents('test');
-        $this->xmlStorage = new XmlStorage($this->file);
     }
 }

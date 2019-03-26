@@ -51,15 +51,9 @@ class Validate extends BaseController
     public function getValidationData(): array
     {
         $validate = [];
-        $validate[] = $this->passwordValidate
-        ($this->userPostInfo->getPassword(),
-        $this->userPostInfo->getPasswordConfirm());
-        $validate[] = $this->loginValidate
-        ($this->userPostInfo->getLogin(),
-        $this->userXmlInfo->getLogin());
-        $validate[] = $this->emailValidate
-        ($this->userPostInfo->getEmail(),
-        $this->userXmlInfo->getEmail());
+        $validate[] = $this->passwordValidate($this->userPostInfo->getPassword(),$this->userPostInfo->getPasswordConfirm());
+        $validate[] = $this->loginValidate($this->userPostInfo->getLogin(),$this->userXmlInfo->getLogin());
+        $validate[] = $this->emailValidate($this->userPostInfo->getEmail(),$this->userXmlInfo->getEmail());
         return $validate;
     }
     

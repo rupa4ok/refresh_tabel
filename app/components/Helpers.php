@@ -19,7 +19,7 @@ class Helpers
     {
         extract($data, EXTR_SKIP);
         ob_start();
-        require ROOT."/view/$template.php";
+        require ROOT . "/view/$template.php";
         return trim(ob_get_clean());
     }
 }

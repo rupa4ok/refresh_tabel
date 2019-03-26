@@ -22,7 +22,7 @@
 <div class="limiter inner">
     <div class="container-login100" style="background-image: url('/template/images/bg-01.jpg');">
         <div class="wrap-login100 p-l-55 p-r-55 p-t-65 p-b-54">
-            123
+            <?=$user ?>
         </div>
         <div class="wrap-login100 p-l-55 p-r-55 p-t-65 p-b-54">
             <br>

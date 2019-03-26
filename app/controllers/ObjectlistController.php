@@ -9,28 +9,28 @@
 namespace App\Controllers;
 
 use App\components\Helpers;
-use App\Components\Requests;
-use App\Components\Auth;
+use App\Components\UserInfo;
+use App\storage\SessionStorage;
 
 class ObjectlistController extends BaseController
 {
-    /**
-     * @var Auth
-     */
-    private $auth;
-    
-    /**
-     * @var Requests
-     */
+    private $userInfo;
     
     public function __construct()
     {
-        $this->auth = new Auth();
         parent::__construct();
+        $this->sessionStorage = new SessionStorage('user');
+        $this->userInfo = new UserInfo($this->sessionStorage->load());
     }
     
     public function actionIndex()
     {
-        return Helpers::render('objectlist', ['login' => '']);
+        return Helpers::render('objectlist', $this->params());
     }
+    
+    private function params()
+    {
+        return ['user' => $this->userInfo->getName()];
+    }
+    
 }

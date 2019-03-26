@@ -23,13 +23,16 @@
     <div class="container-login100" style="background-image: url('/template/images/bg-01.jpg');">
         <div class="wrap-login100 p-l-55 p-r-55 p-t-65 p-b-54">
             <form method="post" class="login100-form validate-form">
-					<span class="login100-form-title p-b-49">
+					<span class="login100-form-title p-b-29">
 						Рефреш
+                        <?=$test1 ?>
+                        <?=$test2 ?>
 					</span>
+                <div class="p-b-10"><span class="label-input100"><?=$errors ?></span></div>
                 
                 <div class="wrap-input100 validate-input m-b-23" data-validate="Введите ваш логин">
                     <span class="label-input100">Логин</span>
-                    <input class="input100" type="text" name="username" placeholder="Ваш логин"
+                    <input class="input100" type="text" name="login" placeholder="Ваш логин"
                            pattern="[а-яА-Яa-zA-Z0-9_-]{3,15}" autofocus>
                     <span class="focus-input100" data-symbol="&#xf206;"></span>
                 </div>

@@ -10,12 +10,12 @@ namespace App\Controllers;
 
 use App\components\Helpers;
 use App\Components\Requests;
-use App\Components\Auth;
+use App\Services\Auth\LoginService;
 
 class IndexController extends BaseController
 {
     /**
-     * @var Auth
+     * @var LoginService
      */
     private $auth;
     
@@ -25,14 +25,13 @@ class IndexController extends BaseController
     
     public function __construct()
     {
-        $this->auth = new Auth();
         parent::__construct();
+        $this->auth = new LoginService($this->request->getPost());
     }
     
     public function actionMain()
     {
-        $this->auth->login();
-    
-        return Helpers::render('index', ['login' => '']);
+        $errors = $this->auth->login();
+        return Helpers::render('index', ['errors' => $errors]);
     }
 }

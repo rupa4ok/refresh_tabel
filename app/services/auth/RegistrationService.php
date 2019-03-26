@@ -11,7 +11,7 @@ namespace App\Components;
 use App\controllers\BaseController;
 use App\Storage\StorageInterface;
 
-class Reg extends BaseController
+class RegistrationService extends BaseController
 {
     /**
      * @var UserInfo[]
@@ -22,8 +22,16 @@ class Reg extends BaseController
      */
     protected $storage;
     
+    /**
+     * @var Validate
+     */
+    protected $validate;
+    
     public function __construct()
     {
         parent::__construct();
+        $this->validate = new Validate();
     }
+    
+    
 }
