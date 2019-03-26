@@ -42,13 +42,13 @@ class LoginService
     
     public function login()
     {
-        $formLogin = $this->userInfo->getLogin();
-        return $this->checkLogin($formLogin);
+        $formEmail = $this->userInfo->getEmail();
+        return $this->checkLogin($formEmail);
     }
     
-    public function checkLogin($formLogin)
+    public function checkLogin($formEmail)
     {
-        $checkLogin = User::where('name', $formLogin)->first();
+        $checkLogin = User::where('email', $formEmail)->first();
         if ($checkLogin) {
             $this->session->save($checkLogin->toArray());
             $this->helpers->redirect('objectlist', 301);

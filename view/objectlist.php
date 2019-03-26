@@ -7,10 +7,9 @@
     <link rel="icon" type="image/png" href="../template/images/icons/favicon.ico"/>
     <link rel="stylesheet" type="text/css" href="../template/vendor/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="../template/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" type="text/css" href="../template/fonts/iconic/css/material-design-iconic-font.min.css">
+    <link rel="stylesheet" type="text/css" href="../template/fonts/Linearicons-Free-v1.0.0/icon-font.min.css">
     <link rel="stylesheet" type="text/css" href="../template/vendor/animate/animate.css">
     <link rel="stylesheet" type="text/css" href="../template/vendor/css-hamburgers/hamburgers.min.css">
-    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="../template/vendor/animsition/css/animsition.min.css">
     <link rel="stylesheet" type="text/css" href="../template/vendor/select2/select2.min.css">
     <link rel="stylesheet" type="text/css" href="../template/vendor/daterangepicker/daterangepicker.css">
@@ -19,23 +18,16 @@
 </head>
 <body>
 
-<div class="limiter inner">
-    <div class="container-login100" style="background-image: url('/template/images/bg-01.jpg');">
-        <div class="wrap-login100 p-l-55 p-r-55 p-t-65 p-b-54">
-            <?=$user ?>
+<div class="limiter">
+    <div class="container-login100">
+        <div class="wrap-login100 p-l-55 p-r-55 p-t-65 p-b-50 inner">
+            123
         </div>
-        <div class="wrap-login100 p-l-55 p-r-55 p-t-65 p-b-54">
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
+        <div class="wrap-login100 p-l-55 p-r-55 p-t-65 p-b-50 inner object">
+            123
         </div>
     </div>
 </div>
-
-<div id="dropDownSelect1"></div>
 
 <script src="../template/vendor/jquery/jquery-3.2.1.min.js"></script>
 <script src="../template/vendor/animsition/js/animsition.min.js"></script>
