@@ -34,7 +34,7 @@ after_script:
 - vendor/bin/test-reporter
 
 script:
-- make test lint
+- make test
 
 after_success:
 # Submit coverage report to https://codecov.io

@@ -9,7 +9,7 @@
 namespace App\controllers;
 
 use App\components\Helpers;
-use App\Models\Users;
+use App\Models\User;
 
 class RegController extends BaseController
 {
@@ -17,7 +17,7 @@ class RegController extends BaseController
     
     public function __construct()
     {
-        $this->users = new Users();
+        $this->users = new User();
         parent::__construct();
     }
     
@@ -25,7 +25,7 @@ class RegController extends BaseController
     {
         $errors = '';
         if ($this->request->requestMethod('POST')) {
-            $errors = $this->users->register();
+            $errors = $this->users->name;
         }
     
         return Helpers::render('reg', ['errors' => $errors]);

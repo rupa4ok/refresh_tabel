@@ -26,7 +26,8 @@ class Validate extends BaseController
     {
         parent::__construct();
         parent::DB_XML;
-        $this->userPostInfo = new UserInfo($this->request->getPost());
+        $post = new Requests();
+        $this->userPostInfo = new UserInfo($post->getPost());
         $this->userXmlInfo = new UserInfo($this->xmlStorage->load());
     }
     

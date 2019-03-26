@@ -14,15 +14,6 @@ use App\Components\Auth;
 
 class ObjectController extends BaseController
 {
-    /**
-     * @var Auth
-     */
-    private $auth;
-    
-    /**
-     * @var Requests
-     */
-    
     public function __construct()
     {
         parent::__construct();
